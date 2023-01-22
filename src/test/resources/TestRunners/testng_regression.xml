@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Shop LamdaTest PlayGround automtion regression suite" thread-count="3" parallel="tests" verbose="3">
+
+	<listeners>
+		<listener class-name="com.qa.lamda.testlisteners.ExtentReportListener" />
+		<listener class-name="com.qa.lamda.testlisteners.TestAllureListener" />
+
+	</listeners>
+
+	<test name="Register Page Test_chrome_80">
+		<parameter name="browser" value="firefox" />
+		<parameter name="version" value="80" />
+		<classes>
+			<class name="com.qa.lamda.tests.RegisterPageTest" />
+		</classes>
+	</test>
+	<test name="Login page Test_chrome_80">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="80" />
+		<classes>
+			<class name="com.qa.lamda.tests.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="My Accounts Page Test_chrome_85">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="85" />
+		<classes>
+			<class name="com.qa.lamda.tests.MyAccountsPageTest" />
+		</classes>
+	</test>
+	<test name="ProductInfo Test_chrome_85">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="85" />
+		<classes>
+			<class name="com.qa.lamda.tests.ProductInfoTest" />
+		</classes>
+	</test>
+
+	<test name="CheckOut Page Test_chrome_85">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="85" />
+		<classes>
+			<class name="com.qa.lamda.tests.CheckOutPageTest" />
+		</classes>
+	</test>
+
+	<!-- <test name="Reg page Test"> <classes> <class name="com.qa.lamda.tests.RegisterPageTest" 
+		/> </classes> </test> -->
+
+
+</suite>
