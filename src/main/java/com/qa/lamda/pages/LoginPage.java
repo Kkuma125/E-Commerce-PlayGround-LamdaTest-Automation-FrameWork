@@ -12,7 +12,6 @@ import com.qa.lamda.utils.ElementUtil;
 
 public class LoginPage {
 
-
 	private WebDriver driver;
 	private ElementUtil elementUtil;
 
@@ -24,8 +23,6 @@ public class LoginPage {
 	private By ForgotPwdLink = By.xpath("//a[text()='Forgotten Password']");
 	private By RegisterLink = By.xpath("//div[@class='list-group mb-3']//a[text()=' Register'] ");
 
-
-
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		elementUtil = new ElementUtil(this.driver);
@@ -36,8 +33,8 @@ public class LoginPage {
 		act.moveToElement(elementUtil.getElement(myAccountmenuLink)).perform();
 		elementUtil.doClick(LoginLink);
 
-
 	}
+
 	public String getLoginPageTitle() {
 		String Title = driver.getTitle();
 		System.out.println("Title is :" + Title);
@@ -49,7 +46,7 @@ public class LoginPage {
 		return elementUtil.doIsDisplayed(ForgotPwdLink);
 	}
 
-	public MyAccountsPage Login(String username , String pwd) {
+	public MyAccountsPage Login(String username, String pwd) {
 		System.out.println("Login with : " + username + " " + pwd);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.presenceOfElementLocated(emailid));
@@ -65,7 +62,5 @@ public class LoginPage {
 		elementUtil.doClick(RegisterLink);
 		return new RegisterPage(driver);
 	}
-
-
 
 }

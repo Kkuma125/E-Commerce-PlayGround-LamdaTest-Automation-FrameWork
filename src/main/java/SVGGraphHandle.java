@@ -25,7 +25,7 @@ public class SVGGraphHandle {
 			String text = driver.findElement(By.xpath(textTooltip)).getText();
 			Thread.sleep(500);
 			System.out.println(text);
-f
+
 		}
 	}
 }
