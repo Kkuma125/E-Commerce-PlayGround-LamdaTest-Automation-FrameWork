@@ -14,8 +14,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class DriverFactory {
 
 	private static final Logger LOGGER = Logger.getLogger(String.valueOf(DriverFactory.class));
@@ -34,11 +32,11 @@ public class DriverFactory {
 		highlight = prop.getProperty("highlight").trim();
 		optionsManager  = new OptionsManager(prop);
 		if(browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 			tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 		}
 		else if(browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 			tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
 		}
 		else {

@@ -1,4 +1,5 @@
 package com.qa.lamda.testlisteners;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -7,9 +8,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.qa.lamda.driverfactory.DriverFactory;
-
 import io.qameta.allure.Attachment;
-
 
 public class TestAllureListener extends DriverFactory implements ITestListener {
 
@@ -38,7 +37,7 @@ public class TestAllureListener extends DriverFactory implements ITestListener {
 	@Override
 	public void onStart(ITestContext iTestContext) {
 		System.out.println("I am in onStart method " + iTestContext.getName());
-		//iTestContext.setAttribute("WebDriver", BasePage.getDriver());
+		// iTestContext.setAttribute("WebDriver", BasePage.getDriver());
 	}
 
 	@Override
@@ -59,15 +58,14 @@ public class TestAllureListener extends DriverFactory implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult iTestResult) {
 		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
-		Object testClass = iTestResult.getInstance();
-		//WebDriver driver = BasePage.getDriver();
+		// WebDriver driver = BasePage.getDriver();
 		// Allure ScreenShotRobot and SaveTestLog
 		if (getDriver() instanceof WebDriver) {
 			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
 			saveScreenshotPNG(getDriver());
 		}
 		// Save a log on allure.
-		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		
+		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 	}
 
 	@Override

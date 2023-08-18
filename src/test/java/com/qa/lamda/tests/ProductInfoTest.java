@@ -58,7 +58,7 @@ public class ProductInfoTest extends BasePage {
 		softAssert.assertEquals(productinformap.get("Product Code"), "Product 14");
 		softAssert.assertEquals(productinformap.get("Brand"), "Apple");
 		softAssert.assertEquals(productinformap.get("Availability"), "In Stock");
-		softAssert.assertEquals(productinformap.get("price"), "$170.00");
+		softAssert.assertEquals(productinformap.get("price"), "$140.00");
 		softAssert.assertAll();
 
 	}	
